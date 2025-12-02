@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shopping Cart Page</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2b6cee",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <div class="layout-container flex h-full grow flex-col">
+            <header class="sticky top-0 z-50 flex items-center justify-center border-b border-solid border-gray-200 dark:border-gray-700 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+                <div class="flex items-center justify-between whitespace-nowrap px-4 sm:px-6 lg:px-8 w-full max-w-7xl py-3">
+                    <div class="flex items-center gap-8">
+                        <div class="flex items-center gap-2 text-gray-900 dark:text-white">
+                            <span class="material-symbols-outlined text-primary text-3xl">storefront</span>
+                            <h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">AbhiShop</h2>
+                        </div>
+                        <nav class="hidden md:flex items-center gap-6">
+                            <a class="text-gray-900 dark:text-white text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">New Arrivals</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Men</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Women</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Sale</a>
+                        </nav>
+                    </div>
+                    <div class="flex flex-1 justify-end items-center gap-4">
+                        <label class="hidden lg:flex flex-col min-w-40 !h-10 max-w-sm w-full">
+
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-gray-500 dark:text-gray-400 flex bg-gray-200/50 dark:bg-gray-800/50 items-center justify-center pl-3 rounded-l-lg">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-gray-200/50 dark:bg-gray-800/50 h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-2 text-sm font-normal leading-normal" placeholder="Search for products..." value=""/>
+</div>
+</label>
+                        <div class="flex items-center gap-2">
+                            <button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 hover:bg-primary/20 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+                            <button class="relative flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 hover:bg-primary/20 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+<span class="material-symbols-outlined">shopping_bag</span>
+<div class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-white text-[10px] font-bold">3</div>
+</button>
+                            <button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 w-10 hover:bg-primary/20 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary">
+<span class="material-symbols-outlined">person</span>
+</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="flex-1">
+                <section class="w-full max-w-7xl mx-auto py-8 md:py-12">
+                    <div class="px-4 sm:px-6 lg:px-8">
+                        <div class="mb-8">
+                            <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Shopping Cart</h1>
+                            <p class="text-gray-600 dark:text-gray-300 mt-2">You have 3 item(s) in your cart.</p>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 xl:gap-12">
+                            <div class="lg:col-span-2">
+                                <div class="divide-y divide-gray-200 dark:divide-gray-700">
+                                    <div class="flex items-start gap-4 py-6">
+                                        <div class="w-24 h-32 flex-shrink-0">
+                                            <div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-md" data-alt="A classic white cotton t-shirt on a hanger" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAI_o5W4W84H-c16Ok-WUgN0fCnVMKKRqhBkIokmAbrBGYOx14-MJkROS7ITqpyaV33dUX9vqMLsPqP0zmxqQetTnCFrg1nhskkawU9inNhJospW_JAtAWcm2FnmlBhCKPY1q4i-Pn5v92e-MjJuLenbSWl2RCv14KJawbDW60vgB1W-IjZXzNtBsxCfNKeLH1HVtcoA6pSgQNFVGPsjqrrmMpqAXBaqTxHzJWpB13AHP5_-2gY15wbXiXAGIg5CEBBorqKy3mKEQs3");'></div>
+                                        </div>
+                                        <div class="flex-1 flex flex-col sm:flex-row justify-between items-start gap-4">
+                                            <div class="flex-1">
+                                                <p class="text-gray-800 dark:text-gray-100 font-semibold leading-normal">Classic Cotton Tee</p>
+                                                <p class="text-gray-500 dark:text-gray-400 text-sm">Size: M, Color: White</p>
+                                                <button class="text-primary text-sm font-medium mt-2 hover:underline">Remove</button>
+                                            </div>
+                                            <div class="flex items-center gap-4">
+                                                <div class="flex items-center border border-gray-300 dark:border-gray-600 rounded-md">
+                                                    <button class="h-10 w-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">-</button>
+                                                    <span class="w-10 text-center font-medium">1</span>
+                                                    <button class="h-10 w-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">+</button>
+                                                </div>
+                                                <div class="text-right w-20">
+                                                    <p class="text-gray-500 dark:text-gray-400 text-sm">₹ 500.00</p>
+                                                    <p class="font-semibold text-gray-900 dark:text-white">₹ 500.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4 py-6">
+                                        <div class="w-24 h-32 flex-shrink-0">
+                                            <div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-md" data-alt="A pair of slim fit denim jeans folded neatly" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuChUZpLyhIlaX3WmMbZVes9iq6J8nGtp1t9cWnIK51G3egHetpvsux3IAGR_a5-yNDJrppu-k0PAVP3K4fK_-UXHbRWxHPwcuwiHwxqEXs2b9oEXdGH_qZOXV7jsFxgsRztY2arI1S76XKmySo9nM2d-_rUvOZ0v0JumX1qv1FCFhC2yQUyUYOSo7YywLy5t2tn1UIt9iSqOSGZjFGwY_9i_J8bC-k3xenWGTgCb_qYSGdE_ZVW9qAEVJoVpH57Jew2X8ABSnsOmWAn");'></div>
+                                        </div>
+                                        <div class="flex-1 flex flex-col sm:flex-row justify-between items-start gap-4">
+                                            <div class="flex-1">
+                                                <p class="text-gray-800 dark:text-gray-100 font-semibold leading-normal">Slim Fit Denim Jeans</p>
+                                                <p class="text-gray-500 dark:text-gray-400 text-sm">Size: 32, Color: Blue</p>
+                                                <button class="text-primary text-sm font-medium mt-2 hover:underline">Remove</button>
+                                            </div>
+                                            <div class="flex items-center gap-4">
+                                                <div class="flex items-center border border-gray-300 dark:border-gray-600 rounded-md">
+                                                    <button class="h-10 w-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">-</button>
+                                                    <span class="w-10 text-center font-medium">1</span>
+                                                    <button class="h-10 w-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">+</button>
+                                                </div>
+                                                <div class="text-right w-20">
+                                                    <p class="text-gray-500 dark:text-gray-400 text-sm">₹ 799.99</p>
+                                                    <p class="font-semibold text-gray-900 dark:text-white">₹ 799.99</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4 py-6">
+                                        <div class="w-24 h-32 flex-shrink-0">
+                                            <div class="w-full h-full bg-center bg-no-repeat bg-cover rounded-md" data-alt="Comfortable high-waisted trousers in a neutral color" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB-nZjHeQ4SRZYojHxqT5t0LmHXFXnvb1g8uUcipD3YzN7BnmwXN06DJscJBKGXjMoozAfv5cX7ZdgHcLQiwzCqpxLk7_e9RB6-HbhdbJtowg7rTrvmsRic2DiEHP87fR8_VfCHEF30iB8UWh_hzSckrnM58dIRt4X01eDE6cie4CmD-osPpfuVNbVs-L_Yxq2sdWj_S-6SxrxMhYL4EsIpDtOuWObALzDdzI3ngmo2L7z97Ny7a9Bvxk9uODycbyoF9YzwO6It56qm");'></div>
+                                        </div>
+                                        <div class="flex-1 flex flex-col sm:flex-row justify-between items-start gap-4">
+                                            <div class="flex-1">
+                                                <p class="text-gray-800 dark:text-gray-100 font-semibold leading-normal">High-Waisted Trousers</p>
+                                                <p class="text-gray-500 dark:text-gray-400 text-sm">Size: S, Color: Beige</p>
+                                                <button class="text-primary text-sm font-medium mt-2 hover:underline">Remove</button>
+                                            </div>
+                                            <div class="flex items-center gap-4">
+                                                <div class="flex items-center border border-gray-300 dark:border-gray-600 rounded-md">
+                                                    <button class="h-10 w-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">-</button>
+                                                    <span class="w-10 text-center font-medium">1</span>
+                                                    <button class="h-10 w-10 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800">+</button>
+                                                </div>
+                                                <div class="text-right w-20">
+                                                    <p class="text-gray-500 dark:text-gray-400 text-sm">₹ 899.00</p>
+                                                    <p class="font-semibold text-gray-900 dark:text-white">₹ 899.00</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="inline-flex items-center gap-2 text-primary font-medium mt-6 hover:underline" href="#">
+                                    <span class="material-symbols-outlined">arrow_back</span> Continue Shopping
+                                </a>
+                            </div>
+                            <div class="lg:col-span-1">
+                                <div class="bg-gray-100 dark:bg-gray-800/50 rounded-lg p-6 lg:sticky lg:top-28">
+                                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Order Summary</h2>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between">
+                                            <p class="text-gray-600 dark:text-gray-300">Subtotal</p>
+                                            <p class="font-medium text-gray-900 dark:text-white">₹ 200.00</p>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <p class="text-gray-600 dark:text-gray-300">Shipping</p>
+                                            <p class="font-medium text-gray-900 dark:text-white">₹ 198.00</p>
+                                        </div>
+                                        <div class="border-t border-gray-200 dark:border-gray-700 my-4"></div>
+                                        <div class="flex justify-between text-lg font-bold">
+                                            <p class="text-gray-900 dark:text-white">Total</p>
+                                            <p class="text-gray-900 dark:text-white">₹ 2198.99</p>
+                                        </div>
+                                    </div>
+
+                                    <a href="https://rzp.io/rzp/TUtgSR5O" target="_blank"><button class="flex w-full mt-8 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] shadow-md hover:opacity-90">
+                                   <span>Proceed to Checkout</span></button></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="bg-gray-100 dark:bg-gray-900/50 mt-16">
+                <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Shop</h3>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">New Arrivals</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">Men</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">Women</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">Sale</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Help &amp; Support</h3>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">Contact Us</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">FAQs</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">Shipping Info</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">Returns Policy</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Company</h3>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">About Us</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">Careers</a>
+                            <a class="text-gray-600 dark:text-gray-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">Press</a>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase">Connect</h3>
+                            <p class="text-gray-600 dark:text-gray-400">Sign up for our newsletter</p>
+                            <form class="flex">
+                                <input class="form-input w-full rounded-l-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-primary focus:border-primary" placeholder="Your email" type="email" />
+                                <button class="bg-primary text-white px-4 rounded-r-md hover:opacity-90" type="submit">Sign Up</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="mt-12 border-t border-gray-200 dark:border-gray-700 pt-8 flex flex-col sm:flex-row items-center justify-between">
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-normal">© 2024 ShopVerse, Inc. All rights reserved.</p>
+                        <div class="flex gap-6 mt-4 sm:mt-0">
+                            <a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#"><svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" fill-rule="evenodd"></path></svg></a>
+                            <a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#"><svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path></svg></a>
+                            <a class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary" href="#"><svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.223 5.904a.75.75 0 01.328 1.166l-3.235 4.53a.75.75 0 00.99 1.118l3.75-2.25a.75.75 0 01.955.518l.8 3a.75.75 0 01-1.423.38l-.66-2.476-3.005 1.803a2.25 2.25 0 01-2.97-3.354l3.235-4.53a.75.75 0 011.235-.157zM8.777 16.096a.75.75 0 01-1.166-.328l-3.235-4.53a.75.75 0 00-1.118.99l2.25 3.75a.75.75 0 01-.518.955l-3 .8a.75.75 0 01-.38-1.423l2.476-.66 1.803 3.005a2.25 2.25 0 013.354-2.97z" fill-rule="evenodd"></path></svg></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+
+</html>
